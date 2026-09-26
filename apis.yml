@@ -1,23 +1,80 @@
 aid: arbiter-ai
+
 name: Arbiter AI
-description: 'Arbiter AI is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://arbiter.ai/og/open-graph-image-arbiter.png
+
+description: Arbiter AI is an agentic care orchestration platform that closes the last‑mile gaps in population health. It activates members through
+  personalized multimodal outreach—AI video, SMS, voice, and portal—and returns verified clinical records proving care was completed, with licensed
+  nurses in the loop. Trusted by leading health organizations, Arbiter delivers auditable outcomes at scale.
+
 url: https://raw.githubusercontent.com/api-evangelist/arbiter-ai/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
-- Company
-apis: []
+- Healthcare
+- AI
+- CareOrchestration
+- PopulationHealth
+- Platform
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/arbiter-ai-itsm-security.txt
+- type: WellKnown
+  url: well-known/arbiter-ai-well-known.yml
+- type: Hosts
+  url: hosts/arbiter-ai-hosts.yml
+- type: TermsOfService
+  url: https://www.arbiter.ai/terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.arbiter.ai/privacy-policy/
+- type: Newsroom
+  url: https://www.arbiter.ai/news/
+- type: Leadership
+  url: https://www.arbiter.ai/team/
+- type: Documentation
+  url: https://dev.arbiter.ai/
+- type: DomainSecurity
+  url: security/arbiter-ai-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/arbiter-ai_stock/
+  url: https://www.arbiter.ai/
+
+apis:
+- name: Arbiter AI API
+  description: API documentation for Arbiter AI platform, providing care orchestration services.
+  humanURL: https://dev.arbiter.ai/
+  aid: arbiter-ai:arbiter-ai-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Developer portal at https://dev.arbiter.ai/ renders documentation via JavaScript, preventing machine‑readable contract discovery.
+  evidence:
+  - url: https://dev.arbiter.ai/
+    status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
